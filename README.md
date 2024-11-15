@@ -7,7 +7,7 @@
 ## How to install
 - From github:
   ```
-  $git clone https://github.com/Adriansolier322/update-system-bash.git
+  $git clone https://github.com/Adriansolier322/update-systems.git
   ```
 
 
