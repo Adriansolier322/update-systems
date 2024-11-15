@@ -1,3 +1,5 @@
+<div aling="center"><img src="logp.png"></div>
+
 ![title](logo.png)
 ## Some Information
 - Title:  `Updater.sh`
