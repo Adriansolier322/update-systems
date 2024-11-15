@@ -12,12 +12,14 @@ turquoise="\e[0;36m\033[1m"
 gray="\e[0;37m\033[1m"
 
 #select language
-language=("Te recomendamos reiniciar el sistema. ¿Quieres hacerlo ahora? (y/n): " "We recomended reboot the system. do you want it now? (y/n): ")
+question=("Te recomendamos reiniciar el sistema. ¿Quieres hacerlo ahora? (s/n): " "We recomended reboot the system. do you want it now? (y/n): ")
+restart_lan=("La maquina se reiniciara en unos instantes." "The system will restart in a few moments.")
+rest_lan=("Has decidido no reiniciar de momento." "You have decided not to restart for now.")
 option=$1
 if [[ "$option" == "-es" ]]; then
-	option="${language[0]}"
+	option=0
 elif [[ "$option" == "-en" ]]; then
-	option="${language[1]}"
+	option=1
 else
 	echo -e "${nocolor}Do you need to use ${red}-es ${normal}or ${red}-en${normal} argument to select the language."
 	echo -e "${nocolor}Tienes que usar ${red}-es ${normal}o ${red}-en${normal} como argumento para selecionar el idioma."
@@ -41,15 +43,15 @@ apt -y upgrade > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yel
 apt -y autoremove > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Autoremove ${green}Ok${nocolor}"
 
 # reboot the system if the user want
-read -p "$option" restart 
+read -p "${question[$option]}" restart 
 restart=$(echo "$restart" > /dev/null | tr '[:upper:]' '[:lower:]')
-if [[ "$restart" == "y" || "$restart" == "yes" || "$restart" == "" ]]; then
-	echo "La maquina se reiniciara en unos instantes."
+if [[ "$restart" == "y" || "$restart" == "yes" || "$restart" == "" || "$restart" == "si" || "$restart" == "s" ]]; then
+	echo "${restart_lan[$option]}"
 	sleep 2
 	reboot -f
 elif [[ "$restart" == "n" || "$restart" == "no" ]]; then
-	echo "Has decidido no reiniciar ahora."
+	echo "${rest_lan[$option]}."
 else
-	echo "Respuesta invalida."
+	echo -e "${rojo}Error input code: #ae2857d550b5cc5baed4${nocolor}"
 fi
 

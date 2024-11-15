@@ -20,6 +20,6 @@
   ```
   $sudo bash updater.sh -es
   ```
-Use the arg -en or -es to select the lenguage
+Use the arg -en or -es to select the language
 
 
