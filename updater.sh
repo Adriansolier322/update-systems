@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Updater v1.0, Author: Adrián Fernández Álvarez
+# Updater v1.1, Author: Adrián Fernández Álvarez
 
 #Colours
 nocolor="\033[0m\e[0m"
@@ -12,6 +12,8 @@ turquoise="\e[0;36m\033[1m"
 gray="\e[0;37m\033[1m"
 
 #select language
+is_root=("Necesitas ser root para ejecutar el script" "You need to be root to execute the script.")
+inicio=("Iniciando..." "Starting...")
 question=("Te recomendamos reiniciar el sistema. ¿Quieres hacerlo ahora? (s/n): " "We recomended reboot the system. do you want it now? (y/n): ")
 restart_lan=("La maquina se reiniciara en unos instantes." "The system will restart in a few moments.")
 rest_lan=("Has decidido no reiniciar de momento." "You have decided not to restart for now.")
@@ -31,9 +33,9 @@ clear
 function user_root(){
 	user=$(whoami)
 	if [[ "$user" != "root" ]]; then
-		echo -e "${red}Necesitas ser root para ejecutar el script"; tput cnorm; exit
+		echo -e "${red}${is_root[$option]}"; tput cnorm; exit
 	else
-	echo -e "${purple}[${turquoise}-${purple}]${nocolor} Iniciando...${nocolor}"
+	echo -e "${purple}[${turquoise}-${purple}]${nocolor}${inicio[$option]}${nocolor}"
 	fi
 }
 
