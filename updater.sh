@@ -42,7 +42,7 @@ apt -y autoremove > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${
 
 # reboot the system if the user want
 read -p "$option" restart 
-restart=$(echo "$restart" > /dev/null/ | tr '[:upper:]' '[:lower:]')
+restart=$(echo "$restart" > /dev/null | tr '[:upper:]' '[:lower:]')
 if [[ "$restart" == "y" || "$restart" == "yes" || "$restart" == "" ]]; then
 	echo "La maquina se reiniciara en unos instantes."
 	sleep 2
