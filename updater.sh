@@ -23,8 +23,8 @@ if [[ "$option" == "-es" ]]; then
 elif [[ "$option" == "-en" ]]; then
 	option=1
 else
-	echo -e "${nocolor}Do you need to use ${red}-es ${normal}or ${red}-en${normal} argument to select the language."
-	echo -e "${nocolor}Tienes que usar ${red}-es ${normal}o ${red}-en${normal} como argumento para selecionar el idioma."
+	echo -e "${nocolor}Do you need to use ${red}-es ${nocolor}or ${red}-en${nocolor} argument to select the language."
+	echo -e "${nocolor}Tienes que usar ${red}-es ${nocolor}o ${red}-en${nocolor} como argumento para selecionar el idioma."
 	exit
 fi
 clear
