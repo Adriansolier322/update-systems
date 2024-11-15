@@ -30,14 +30,14 @@ fi
 clear
 
 # Check if user is root
-function user_root(){
-	user=$(whoami)
-	if [[ "$user" != "root" ]]; then
-		echo -e "${red}${is_root[$option]}"; tput cnorm; exit
-	else
+
+user=$(whoami)
+if [[ "$user" != "root" ]]; then
+	echo -e "${red}${is_root[$option]}"; tput cnorm; exit
+else
 	echo -e "${purple}[${turquoise}-${purple}]${nocolor}${inicio[$option]}${nocolor}"
-	fi
-}
+fi
+
 
 # Update, upgrade, autoremove system and do feedback
 apt -y update > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Update ${green}Ok${nocolor}"
