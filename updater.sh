@@ -27,7 +27,7 @@ else
 	echo -e "${nocolor}Tienes que usar ${red}-es ${nocolor}o ${red}-en${nocolor} como argumento para selecionar el idioma."
 	exit
 fi
-
+clear
 # Check if user is root
 user=$(whoami)
 if [[ "$user" != "root" ]]; then
@@ -35,7 +35,6 @@ if [[ "$user" != "root" ]]; then
 else
 	echo -e "${purple}[${turquoise}-${purple}]${nocolor}${inicio[$option]}${nocolor}"
 fi
-clear
 
 # Update, upgrade, autoremove system and do feedback
 apt -y update > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Update ${green}Ok${nocolor}"
