@@ -5,7 +5,7 @@
 
 
 ## How to install
-- From github:
+- With Git:
   ```
   $git clone https://github.com/Adriansolier322/update-systems.git
   ```
