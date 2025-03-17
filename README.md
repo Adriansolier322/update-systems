@@ -1,6 +1,6 @@
 ![title](logo.png)
 ## Some Information
-- Title:  `Updater.sh`
+- Title:  `updater.sh`
 - Author:  `Adrián Fernández Álvarez`
 
 
