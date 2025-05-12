@@ -37,8 +37,10 @@ else
 fi
 
 # Update, upgrade, autoremove system and do feedback
-apt -y update > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Update ${green}Ok${nocolor}"
-apt -y upgrade > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Upgrade ${green}Ok${nocolor}"
+apt -y update > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Apt Update ${green}Ok${nocolor}"
+apt -y upgrade > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Apt Upgrade ${green}Ok${nocolor}"
+snap refresh > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Snap update ${green}Ok${nocolor}"
+flatpak update > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Flatpak Update ${green}Ok${nocolor}"
 apt -y autoremove > /dev/null 2>&1; echo -e "${purple}[${turquoise}-${purple}]${yellow} Autoremove ${green}Ok${nocolor}"
 
 # reboot the system if the user want
